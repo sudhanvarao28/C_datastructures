@@ -10,9 +10,8 @@ struct LinkedList_int{
     
 
     void (*insert)(int index, int value, struct LinkedList_int *linkedList);
-    void (*remove)(int index, struct LinkedList_int *linkedList);
+    void (*remove_int)(int index, struct LinkedList_int *linkedList);
     int  (*get)(int index, struct LinkedList_int *linkedList);
-    struct LinkedList_int (*constructor)(void);
 };
 
 struct LinkedList_int linked_list_init();
