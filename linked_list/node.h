@@ -1,9 +1,9 @@
 #ifndef node_h
 #define node_h
 
-struct Node_int{
+struct Node{
     void *data;
-    struct Node_int *next;
+    struct Node *next;
     
 };
 

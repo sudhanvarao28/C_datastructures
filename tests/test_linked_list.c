@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 int main(){
-    struct LinkedList_int* linked_list = linked_list_init();
+    struct LinkedList* linked_list = linked_list_init();
 
     for(int i = 0; i<10; i++){
         int* x = (int* )malloc(sizeof(int));
@@ -21,7 +21,7 @@ int main(){
         printf("Data:%d\n",*(int*)linked_list->get(i,linked_list));
     }
     printf("\n");
-    linked_list->remove_int(3, linked_list);
+    linked_list->remove_data(3, linked_list);
 
     len = linked_list->len;
     for(int i = 0;i<len;i++){

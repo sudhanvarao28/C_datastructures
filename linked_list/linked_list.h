@@ -4,16 +4,16 @@
 #include<stdlib.h>
 #include "node.h"
 
-struct LinkedList_int{
-    struct Node_int *head;
+struct LinkedList{
+    struct Node *head;
     int len;     
     
 
-    void (*insert)(int index, void* value, struct LinkedList_int *linkedList);
-    void (*remove_int)(int index, struct LinkedList_int *linkedList);
-    void*  (*get)(int index, struct LinkedList_int *linkedList);
+    void (*insert)(int index, void* value, struct LinkedList*linkedList);
+    void (*remove_data)(int index, struct LinkedList*linkedList);
+    void*  (*get)(int index, struct LinkedList*linkedList);
 };
 
-struct LinkedList_int* linked_list_init();
+struct LinkedList* linked_list_init();
 
 #endif
