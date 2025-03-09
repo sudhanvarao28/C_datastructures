@@ -9,14 +9,14 @@ void remove_int(int index, struct LinkedList_int *linkedList);
 int get_node_data_int(int index, struct LinkedList_int *linkedList);
 
 
-struct LinkedList_int linked_list_init(){
-    struct LinkedList_int new_list;
-    new_list.head = NULL;
-    new_list.len = 0;
+struct LinkedList_int* linked_list_init(){
+    struct LinkedList_int* new_list = (struct LinkedList_int*) malloc(sizeof(struct LinkedList_int));
+    new_list->head = NULL;
+    new_list->len = 0;
 
-    new_list.insert = insert_int;
-    new_list.remove_int = remove_int;
-    new_list.get = get_node_data_int;
+    new_list->insert = insert_int;
+    new_list->remove_int = remove_int;
+    new_list->get = get_node_data_int;
 
     return new_list;
 }
@@ -39,7 +39,7 @@ struct Node_int* iterate(int index, struct LinkedList_int* linked_list){
         exit(-1);
     }
     struct Node_int* cursor = linked_list->head;
-    for(int i=0;i<=index;i++){
+    for(int i=0;i<index;i++){
         cursor = cursor->next;
     }
     return cursor;
@@ -48,6 +48,7 @@ struct Node_int* iterate(int index, struct LinkedList_int* linked_list){
 
 void insert_int(int index,int data, struct LinkedList_int* linked_list){
     struct Node_int* node_to_insert = create_node_int(data);
+    
     if(index == 0){
         node_to_insert->next = linked_list->head;
         linked_list->head = node_to_insert;

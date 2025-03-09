@@ -14,6 +14,6 @@ struct LinkedList_int{
     int  (*get)(int index, struct LinkedList_int *linkedList);
 };
 
-struct LinkedList_int linked_list_init();
+struct LinkedList_int* linked_list_init();
 
 #endif
