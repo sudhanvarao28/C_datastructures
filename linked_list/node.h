@@ -2,7 +2,7 @@
 #define node_h
 
 struct Node_int{
-    int data;
+    void *data;
     struct Node_int *next;
     
 };

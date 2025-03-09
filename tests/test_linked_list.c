@@ -5,14 +5,29 @@ int main(){
     struct LinkedList_int* linked_list = linked_list_init();
 
     for(int i = 0; i<10; i++){
-        linked_list->insert(i,i,linked_list);
+        int* x = (int* )malloc(sizeof(int));
+        *x = i;
+        linked_list->insert(i,x,linked_list);
     }
-    linked_list->insert(1,99,linked_list);
-    int len = linked_list->len;
+    int* num = (int*)malloc(sizeof(int));
 
+
+    *num = 77;
+    linked_list->insert(2,num,linked_list);
+
+
+    int len = linked_list->len;
     for(int i = 0;i<len;i++){
-        printf("Data:%d\n",linked_list->get(i,linked_list));
+        printf("Data:%d\n",*(int*)linked_list->get(i,linked_list));
     }
+    printf("\n");
+    linked_list->remove_int(3, linked_list);
+
+    len = linked_list->len;
+    for(int i = 0;i<len;i++){
+        printf("Data:%d\n",*(int*)linked_list->get(i,linked_list));
+    }
+    
     
     return 0;
 }

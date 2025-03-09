@@ -1,12 +1,12 @@
 #include<stdio.h>
 #include "linked_list.h"
 
-struct Node_int* create_node_int(int data);
+struct Node_int* create_node_int(void* data);
 void destroy_node_int(struct Node_int* node);
 struct Node_int* iterate(int index, struct LinkedList_int* linked_list);
-void insert_int(int index, int value, struct LinkedList_int *linkedList);
+void insert_int(int index, void* value, struct LinkedList_int *linkedList);
 void remove_int(int index, struct LinkedList_int *linkedList);
-int get_node_data_int(int index, struct LinkedList_int *linkedList);
+void* get_node_data_int(int index, struct LinkedList_int *linkedList);
 
 
 struct LinkedList_int* linked_list_init(){
@@ -22,7 +22,7 @@ struct LinkedList_int* linked_list_init(){
 }
 
 
-struct Node_int* create_node_int(int data){
+struct Node_int* create_node_int(void* data){
     struct Node_int* new_node = (struct Node_int*)malloc(sizeof(struct Node_int));
     new_node->data = data;
     new_node->next = NULL;
@@ -46,7 +46,7 @@ struct Node_int* iterate(int index, struct LinkedList_int* linked_list){
 
 }
 
-void insert_int(int index,int data, struct LinkedList_int* linked_list){
+void insert_int(int index,void* data, struct LinkedList_int* linked_list){
     struct Node_int* node_to_insert = create_node_int(data);
     
     if(index == 0){
@@ -78,7 +78,7 @@ void remove_int(int index, struct LinkedList_int* linked_list){
 
 }
 
-int get_node_data_int(int index, struct LinkedList_int* linked_list){
+void* get_node_data_int(int index, struct LinkedList_int* linked_list){
     struct Node_int* node = iterate(index,linked_list);
     return node->data;
 
