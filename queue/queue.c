@@ -1,4 +1,5 @@
 #include "queue.h"
+#include<stdio.h>
 
 
 void push(void* data, struct Queue* queue){
@@ -13,7 +14,7 @@ void* pop(struct Queue* queue){
 
 
 struct Queue* queue_constructor(){
-    struct Queue* queue;
+    struct Queue* queue = (struct Queue*)malloc(sizeof(struct Queue));
     queue->list = linked_list_init(); 
 
     queue->push = push;

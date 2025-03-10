@@ -30,7 +30,6 @@ struct Node* create_node(void* data){
 }
 
 void destroy_Node(struct Node* node){
-        free(node->data);
         free(node);
 }
 
@@ -39,6 +38,7 @@ struct Node* iterate(int index, struct LinkedList* linked_list){
         printf("Iterate Error: Index out of bounds");
         exit(-1);
     }
+    
     struct Node* cursor = linked_list->head;
     for(int i=0;i<index;i++){
         cursor = cursor->next;
