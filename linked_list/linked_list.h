@@ -9,7 +9,7 @@ struct LinkedList{
     int len;     
     
 
-    void (*insert)(int index, void* value, struct LinkedList*linkedList);
+    void (*insert)(int index, void* value, int datatype, int size, struct LinkedList*linkedList);
     void (*remove_data)(int index, struct LinkedList*linkedList);
     void*  (*get)(int index, struct LinkedList*linkedList);
 };

@@ -2,8 +2,8 @@
 #include<stdio.h>
 
 
-void push(void* data, struct Queue* queue){
-    queue->list->insert(queue->list->len, data,queue->list);
+void push(void* data, int datatype, int size, struct Queue* queue){
+    queue->list->insert(queue->list->len, data, datatype, size, queue->list);
 }
 
 void* pop(struct Queue* queue){
