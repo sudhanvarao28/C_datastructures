@@ -12,13 +12,13 @@ int main(){
     for(int i = 0; i<10; i++){
         int* x = (int* )malloc(sizeof(int));
         *x = i;
-        linked_list->insert(i,x,Int,1,linked_list);
+        linked_list->insert(i,x,1,linked_list);
     }
 
     //insert data into a specified place in linked list
     char* num = (char*)malloc(strlen("Sudhanva") + 1);
     strcpy(num, "Sudhanva");
-    linked_list->insert(2,num,Char,strlen(num)+1,linked_list);
+    linked_list->insert(2,num,strlen(num)+1,linked_list);
 
     //print data
     int len = linked_list->len;
@@ -50,7 +50,7 @@ int main(){
     for(int i = 0; i<10; i++){
         int* x = (int* )malloc(sizeof(int));
         *x = i;
-        new_queue->push(x,Int,1,new_queue);
+        new_queue->push(x,1,new_queue);
     }
 
     printf("\n");

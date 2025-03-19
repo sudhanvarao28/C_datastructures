@@ -1,9 +1,7 @@
 #include "queue.h"
-#include<stdio.h>
 
-
-void push(void* data, int datatype, int size, struct Queue* queue){
-    queue->list->insert(queue->list->len, data, datatype, size, queue->list);
+void push(void* data, int size, struct Queue* queue){
+    queue->list->insert(queue->list->len, data, size, queue->list);
 }
 
 void* pop(struct Queue* queue){

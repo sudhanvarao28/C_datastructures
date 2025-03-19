@@ -19,10 +19,9 @@ enum datatype{
 struct Node{
     void *data;
     struct Node *next;
-    int datatype;
-    int size;
+    struct Node *previous;
     
 };
-struct Node* node_constructor(void* data, int datatype, int size);
+struct Node* node_constructor(void* data, int size);
 
 #endif
